@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="irda" basedir="." default="gen_hibernate" > 
+
+	<taskdef name="hibernatetool"
+			classname="org.hibernate.tool.ant.HibernateToolTask"> 
+			<classpath>
+				<fileset dir="libs">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+	</taskdef> 
+
+	<target name="gen_hibernate"
+			description="generate hibernate classes">
+		<hibernatetool>
+		
+			<jdbcconfiguration
+				configurationfile="src/main/resources/reverse/hibernate.cfg.xml"
+				revengfile="src/main/resources/reverse/hibernate.reveng.xml"
+				detectmanytomany="true"
+				packagename="seers.irda.entity"  
+			/>
+			<hbm2java ejb3="true" jdk5="true" destdir="code_gen" />
+			<hbm2cfgxml ejb3="true" destdir="code_gen" />
+		</hibernatetool>
+	</target>
+
+</project>

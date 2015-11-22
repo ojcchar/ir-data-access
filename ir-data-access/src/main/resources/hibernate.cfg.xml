@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>  
+		
+        <property name="hibernate.hikari.dataSourceClassName">com.mysql.jdbc.jdbc2.optional.MysqlDataSource</property>
+	
+	
+	    <mapping class="seers.irda.entity.CodeFile" />
+        <mapping class="seers.irda.entity.IrRelevanceJudgement" />
+        <mapping class="seers.irda.entity.Issue" />
+        <mapping class="seers.irda.entity.Revision" />
+        <mapping class="seers.irda.entity.SoftwareSystem" />
+        <mapping class="seers.irda.entity.IssueRevision" />
+        <mapping class="seers.irda.entity.IrDocument" />
+        <mapping class="seers.irda.entity.IrQuery" />
+        <mapping class="seers.irda.entity.ChangeSet" />
+	</session-factory>
+</hibernate-configuration>
