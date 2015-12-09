@@ -31,4 +31,17 @@ public class IssueDao extends GenericDaoImpl<Issue, Integer> {
 		return executeQuery("from Issue i where i.softwareSystem = :sys", paramNames, params, firstResult, maxResults);
 	}
 
+	public List<Issue> getIssues(SoftwareSystem system) {
+		String[] paramNames = { "sys" };
+		Object[] params = { system };
+		return executeQuery("from Issue i where i.softwareSystem = :sys", paramNames, params);
+	}
+
+	public Issue getIssue(String issueId, SoftwareSystem system) {
+		String[] paramNames = { "issue_id", "sys" };
+		Object[] params = { issueId, system };
+		return executeQueryUniqueObject("from Issue i where i.issueId = :issue_id and i.softwareSystem = :sys",
+				paramNames, params);
+	}
+
 }

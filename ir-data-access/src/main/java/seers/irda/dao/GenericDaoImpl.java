@@ -10,6 +10,7 @@ public class GenericDaoImpl<T, PK extends Serializable> extends GenericDao<T, PK
 
 	public GenericDaoImpl() {
 		super();
+		openCurrentSession();
 	}
 
 	public GenericDaoImpl(Session currentSession) {

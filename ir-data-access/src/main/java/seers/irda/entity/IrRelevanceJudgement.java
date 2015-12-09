@@ -1,5 +1,5 @@
 package seers.irda.entity;
-// Generated Nov 19, 2015 11:09:07 AM by Hibernate Tools 4.3.1.Final
+// Generated Dec 9, 2015 11:27:45 AM by Hibernate Tools 4.3.1.Final
 
 
 import javax.persistence.AttributeOverride;
